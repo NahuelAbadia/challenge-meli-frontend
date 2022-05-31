@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom'
 import { useSearchProduct } from '../../hooks/useSearchProduct'
 import Card from '../../components/card/Card'
-import SearchInfo from '../../components/searchInfo/SearchInfo'
 import SearchBar from '../searchBar/SearchBar'
+import SearchInfo from '../../components/searchInfo/SearchInfo'
 import "./searchProduct.scss"
 
 const SearchProduct = () => {
@@ -14,8 +14,8 @@ const SearchProduct = () => {
   return (
     <>
       <SearchBar />
+      <SearchInfo />
       <div className="container-list">
-        <SearchInfo />
         <div className="card-container">
           {dataProduct.items?.map(prod =>
             <Card

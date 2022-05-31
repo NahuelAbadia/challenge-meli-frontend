@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useDetailProduct } from '../../hooks/useDetailProduct'
-import SearchInfo from '../../components/searchInfo/SearchInfo'
 import SearchBar from '../searchBar/SearchBar'
+import SearchInfo from '../../components/searchInfo/SearchInfo'
 import "../searchProduct/searchProduct.scss"
 import "./detailProduct.scss"
 
@@ -14,8 +14,8 @@ const DetailProduct = () => {
   return (
     <>
       <SearchBar />
+      <SearchInfo />
       <div className="container-product">
-        <SearchInfo />
         <div className="card-container">
           <div className="box">
             <div className="box-img">

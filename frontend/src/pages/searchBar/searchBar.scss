@@ -8,7 +8,7 @@
   justify-content: center;
 
   .container-logo {
-    padding: 3px 23px 0;
+    padding: 3px 20px 0 5px;
   }
 
   .container-form {
@@ -18,7 +18,7 @@
     justify-content: center;
 
     input {
-      width: 945px;
+      width: 905px;
       height: 35px;
       padding-left: 10px;
       border: none;
@@ -40,10 +40,22 @@
       border: none;
       cursor: pointer;
       background-color: #EEEEEE;
+
+      .search-button {
+        object-fit: contain;
+      }
     }
 
-    .search-button {
-      object-fit: contain;
+    @media (max-width: 1080px) {
+      input {
+        width: 605px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      input {
+        width: 405px;
+      }
     }
   }
 }
