@@ -18,7 +18,7 @@ const Card = ({ id, title, price, img, envio }) => {
         </div>
         <div className="card-desc">
           <div className="card-price">
-            <h2>$ {price.amount}</h2>
+            <h2>$ {price}</h2>
             {envio === true ? <img src={ic_shipping} alt="ic_shipping" className="card-img" /> : null}
           </div>
           <h3 onClick={redirectToProduct}>{title}</h3>

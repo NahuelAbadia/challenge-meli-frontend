@@ -7,10 +7,9 @@ const searchML = async (req, res) => {
     const { data: result } = await axios.get(URL)
 
     const items = []
-    const categories = []
 
     const resultados = result.results.slice(0, 4)
-    const categorias = result.available_filters?.filter(item => item.id === "category")[0]?.values
+    const categories = result.available_filters[0].values.map(cat => cat.name)
 
     for (const product of resultados) {
       const item = {
@@ -26,12 +25,6 @@ const searchML = async (req, res) => {
         free_shipping: product.shipping.free_shipping
       }
       items.push(item)
-    }
-
-    if (categorias?.length) {
-      for (const category of categorias) {
-        categories.push(category.name)
-      }
     }
 
     const response = {

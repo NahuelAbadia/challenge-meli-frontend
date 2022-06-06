@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useDetailProduct } from '../../hooks/useDetailProduct'
+import { convertDecimalNumber } from '../../helpers/convertDecimalNumber'
 import SearchBar from '../searchBar/SearchBar'
 import SearchInfo from '../../components/searchInfo/SearchInfo'
 import "../searchProduct/searchProduct.scss"
@@ -24,7 +25,7 @@ const DetailProduct = () => {
             <div className="box-price">
               <p>{product.item?.condition === "new" ? "Nuevo" : "Usado"} - {product.item?.sold_quantity} vendidos</p>
               <h2>{product.item?.title}</h2>
-              <h1>$ {product.item?.price.amount}</h1>
+              <h1>$ {convertDecimalNumber(product.item?.price.amount)}</h1>
               <button className="btn-meli">Comprar</button>
             </div>
           </div>

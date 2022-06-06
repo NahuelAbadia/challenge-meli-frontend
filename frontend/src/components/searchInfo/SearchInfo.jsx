@@ -1,10 +1,12 @@
 import "./searchInfo.scss"
 
-const SearchInfo = () => {
+const SearchInfo = ({ categories }) => {
   return (
     <div className="search-container">
-        <p className="text">Electrónica, Audio y Video  {'>'}  iPod  {'>'}  Reproductores  {'>'}  iPod touch  {'>'} <span>32GB</span></p>
-      </div>
+      <p className="text">
+        {categories?.map((cat, index) => categories[index + 1] ? `${cat} > ` : <span key={cat}>{cat}</span>)}
+      </p>
+    </div>
   )
 }
 
